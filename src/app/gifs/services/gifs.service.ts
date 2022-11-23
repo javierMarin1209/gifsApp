@@ -42,7 +42,6 @@ constructor(private http:HttpClient){
 
     this.http.get<SearchGifResponse>(`${this.serivicioUrl}/search`,{params})
       .subscribe( resp=>{
-        console.log(resp.data);
         this.resultados=resp.data;
         localStorage.setItem('resultados',JSON.stringify(this.resultados))
       });
